@@ -1,3 +1,8 @@
+# The ref keyword
+
+This can be achieved from refs. Refs are a great way to send a message to a particular child instance.
+The ref attribute takes a callback function, and the callback will be executed immediately after the component is mounted or unmounted.
+
 # rnnativeasandbox
 
 npm install -g react-native-cli 
