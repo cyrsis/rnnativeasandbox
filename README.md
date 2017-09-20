@@ -17,6 +17,9 @@ NativeBase, Support theme for single file editing rather than hundred of editing
 mobX , Kind of like redux , 
 - Just make observer and observable
 
+# firebase with mobx
+ 
+npm install --save mobx mobx-react mobx-firebase-store firebase-nest 
 
 RxJS helps you react to events
 
