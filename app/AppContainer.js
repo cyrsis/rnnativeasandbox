@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Drawer } from 'native-base';
 import { View } from 'react-native';
-import { Navigator} from 'react-native-deprecated-custom-components'
+import { Navigator } from 'react-native-deprecated-custom-components'
 
 export default class AppContainer extends Component {
 
@@ -27,26 +27,30 @@ export default class AppContainer extends Component {
     }
 
     renderScene(route, navigator) {
-        switch(route) {
-            default: return null;
+        switch (route) {
+            default:
+                return null;
         }
     }
+
     configureScene(route, routeStack) {
         return Navigator.SceneConfigs.PushFromRight;
     }
+
     render() {
         return (
             <Drawer
                 ref={(ref) => this._drawer = ref}
                 type='displace'
-                content={<View style={{backgroundColor: '#000', height: 1000}} />}
+                content={<View style={{backgroundColor: '#000', height: 1000}}/>}
                 onClose={this.closeDrawer.bind(this)}
                 onOpen={this.openDrawer.bind(this)}
                 openDrawerOffset={100}
                 panOpenMask={.25}
+
             >
                 <Navigator
-                    ref={(ref) => this._navigator =  ref}
+                    ref={(ref) => this._navigator = ref}
                     configureScene={this.configureScene.bind(this)}
                     renderScene={this.renderScene.bind(this)}
                 />
