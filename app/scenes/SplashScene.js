@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { image } from 'react-native'
+import { Image } from 'react-native'
 import { View } from 'native-base'
 
 export default class SplashScene extends Component {
@@ -21,7 +21,7 @@ export default class SplashScene extends Component {
         return (
             <View style={{flex: 1}}>
                 <Image style={{flex:1,width:null,height:null}} source={settings.SplashImg}/>
-            
+
             </View>
         );
     }
