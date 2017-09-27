@@ -1,4 +1,5 @@
-# The ref keyword
+
+ # The ref keyword
 
 This can be achieved from refs. Refs are a great way to send a message to a particular child instance.
 The ref attribute takes a callback function, and the callback will be executed immediately after the component is mounted or unmounted.
@@ -16,6 +17,12 @@ NativeBase, Support theme for single file editing rather than hundred of editing
 
 mobX , Kind of like redux , 
 - Just make observer and observable
+
+npm install --save-dev babel-plugin-transform-decorators-legacy
+
+In the ,baberlrc add ,
+
+"plugins": ["transform-decorators-legacy"]
 
 # firebase with mobx
  
