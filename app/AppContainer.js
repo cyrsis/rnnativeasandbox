@@ -5,9 +5,11 @@ import { Navigator } from 'react-native-deprecated-custom-components'
 import SideMenu from "./components/sideMenu";
 import theme from './theme/base-theme'
 import SettingsStore from "./stores/SettingsStore";
+import AuthStore from './stores/authStore'
 import SplashScene from "./scenes/SplashScene";
 
 const settings = new SettingsStore()
+const authStore = new AuthStore()
 
 
 export default class AppContainer extends Component {
@@ -17,7 +19,9 @@ export default class AppContainer extends Component {
         this.state = {
             toggled: false,
             store: {
-                settings: settings
+                settings: settings,
+                auth:authStore  //Once we get here, every scence and componet have access
+
             },
             theme: theme
         };

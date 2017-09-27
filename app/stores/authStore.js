@@ -16,8 +16,9 @@ export default class AuthStore{
         if (this.authUser) { //Check the user sign in or not
             return Promise.resolve(this.authUser)
         }
-        
-    }
+
+        return firebase.auth().signInWithEmailAndPassword(email,password)
+    } //Once we get it here, import in the App.store
 
     @action
     signOut() {
