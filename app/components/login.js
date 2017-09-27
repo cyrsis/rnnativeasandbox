@@ -16,13 +16,13 @@ export default class login extends Component {
 
     updateEmail(email) {
         this.setState({
-            email:email
+            email: email
         });
     }
 
     updatePassword(password) {
         this.setState({
-            password:password,
+            password: password,
         });
     }
 
@@ -30,9 +30,9 @@ export default class login extends Component {
         const {auth} = this.props.stores
         const {email, password} = this.state
 
-        this.setState({loading:true}, () => {
-                auth.signIn({email,password }
-            ).then(() => {
+        this.setState({loading: true}, () => {
+                auth.signIn({email, password}
+                ).then(() => {
                     this.props.navigator.replace({
                         title: 'Match',
                         passProps: this.props
@@ -46,10 +46,21 @@ export default class login extends Component {
 
 
     render() {
+        const {loading} = this.state
+        const {auth} = this.props.stores
         return (
-            <div>
 
-            </div>
+            <View theme={this.props.theme}>
+                <InputGroup style={{marginBottom: 10}} boarderType='round'>
+                    <Icon style={{color: "#fff"}} name='person-outline'/>
+                    <Input style={{color: "#fff"}} placeholder='Please Enter Email'
+                           placeholderTextColor="#fff"
+                           onChangeText={(email) => {
+                               this.updateEmail(email)
+                           }}
+                    />
+                </InputGroup>
+            </View>
         );
     }
 }
