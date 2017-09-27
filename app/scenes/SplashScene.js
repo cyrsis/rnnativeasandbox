@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Image } from 'react-native'
 import { View } from 'native-base'
 
+
+//<SplashScene {...route.passProps} navigator={navigator}/>
 export default class SplashScene extends Component {
     constructor(props) {
         super(props);
