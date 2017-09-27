@@ -1,4 +1,7 @@
+React native -vector
 
+npm install --save react-native-vector-icons
+react-native link
  # The ref keyword
 
 This can be achieved from refs. Refs are a great way to send a message to a particular child instance.
