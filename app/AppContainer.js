@@ -4,13 +4,17 @@ import { View } from 'react-native';
 import { Navigator } from 'react-native-deprecated-custom-components'
 import SideMenu from "./components/sideMenu";
 import theme from './theme/base-theme'
+
 import SettingsStore from "./stores/SettingsStore";
 import AuthStore from './stores/authStore'
+import MatchStore from './stores/matchStore'
+
 import SplashScene from "./scenes/SplashScene";
 import LoginScene from './scenes/loginScene'
 
 const settings = new SettingsStore()
 const authStore = new AuthStore()
+const matchStore = new MatchStore()
 
 
 export default class AppContainer extends Component {
@@ -21,8 +25,8 @@ export default class AppContainer extends Component {
             toggled: false,
             store: {
                 settings: settings,
-                auth:authStore  //Once we get here, every scence and componet have access
-
+                auth:authStore,  //Once we get here, every scence and componet have access
+                matches:matchStore
             },
             theme: theme
         };

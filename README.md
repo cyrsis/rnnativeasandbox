@@ -1,3 +1,6 @@
+npm install --save react-native-swipe-cards 
+
+
 React native -vector
 
 npm install --save react-native-vector-icons
