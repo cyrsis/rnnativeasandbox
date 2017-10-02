@@ -3,14 +3,15 @@ import { Drawer } from 'native-base';
 import { View } from 'react-native';
 import { Navigator } from 'react-native-deprecated-custom-components'
 import SideMenu from "./components/sideMenu";
-import theme from './theme/base-theme'
+import theme from './theme/base-theme';
 
 import SettingsStore from "./stores/SettingsStore";
-import AuthStore from './stores/authStore'
-import MatchStore from './stores/matchStore'
+import AuthStore from './stores/authStore';
+import MatchStore from './stores/matchStore';
 
 import SplashScene from "./scenes/SplashScene";
-import LoginScene from './scenes/loginScene'
+import LoginScene from './scenes/loginScene';
+import MatchScene from './scenes/MatchScene';
 
 const settings = new SettingsStore()
 const authStore = new AuthStore()
@@ -51,6 +52,9 @@ export default class AppContainer extends Component {
             }
             case 'Login' :{
                 return <LoginScene {...route.passProps} navigator={navigator}/>
+            }
+            case 'Match' :{
+                return <MatchScene {...route.passProps} navigator={navigator}/>
             }
             default:
                 return null;

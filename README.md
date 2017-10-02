@@ -1,9 +1,22 @@
+## For working with Blob storeage
+
+npm install --save react-native-fetch-blob 
+react-native link
+
+## For Swipe card feature
 npm install --save react-native-swipe-cards 
 
 
 React native -vector
 
+```bash
 npm install --save react-native-vector-icons
+```
+
+
+
+https://oblador.github.io/react-native-vector-icons/
+
 react-native link
  # The ref keyword
 

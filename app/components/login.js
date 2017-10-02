@@ -52,7 +52,7 @@ export default class Login extends Component {
                            onChangeText={(email) => { this.updateEmail(email)}} />
                 </InputGroup>
                 <InputGroup style={{marginBottom:10}} boarderType='round'>
-                    <Icon style={{color:"#fff"}} name='person'/>
+                    <Icon style={{color:"#fff"}} name='paper-plane'/>
                     <Input style={{color:"#fff"}}
                            placeholder='Please Enter Password'
                            placeholderTextColor="#fff"
