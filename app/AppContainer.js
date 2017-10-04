@@ -66,7 +66,9 @@ export default class AppContainer extends Component {
     }
 
     render() {
+
         return (
+
             <Drawer
                 ref={(ref) => this._drawer = ref}
                 type='displace'
@@ -75,7 +77,6 @@ export default class AppContainer extends Component {
                 onOpen={this.openDrawer.bind(this)}
                 openDrawerOffset={100}
                 panOpenMask={.25}
-
             >
                 <Navigator
                     ref={(ref) => this._navigator = ref}

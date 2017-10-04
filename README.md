@@ -1,3 +1,10 @@
+## Default Font side is 15
+22 is kind of nice
+##Debug URL is
+
+http://localhost:8081/debugger-ui
+Chrome Developerment Tools
+
 ## For working with Blob storeage
 
 npm install --save react-native-fetch-blob 

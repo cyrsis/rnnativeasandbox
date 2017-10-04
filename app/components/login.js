@@ -12,6 +12,7 @@ import { observer } from 'mobx-react/native'
 
 @observer
 export default class Login extends Component {
+    
     constructor(props) {
         super(props)
         this.state = {
@@ -38,6 +39,7 @@ export default class Login extends Component {
         })
     }
     render() {
+
         const { loading } = this.state
         const { auth } = this.props.stores
 

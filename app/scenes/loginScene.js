@@ -3,9 +3,9 @@ import {
     Container,
     Content,
     View,
-    Text
+    Text,
 } from 'native-base'
-import { Image, StyleSheet, Dimensions } from 'react-native'
+import { Image, StyleSheet, Dimensions, StatusBar } from 'react-native'
 import Login from '../components/login'
 import { observer } from 'mobx-react/native'
 
@@ -18,7 +18,9 @@ export default class LoginScene extends Component {
     render() {
         const {theme, stores} = this.props
         return (
+
                 <Container theme={theme}>
+                    <StatusBar hidden={true}/>
                         <Image source={stores.settings.LoginBG} style={style.loginBackground}>
                             <View style={style.loginForeground}>
                                 <Login {...this.props}/>
