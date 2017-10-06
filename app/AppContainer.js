@@ -8,6 +8,7 @@ import theme from './theme/base-theme';
 import SettingsStore from "./stores/SettingsStore";
 import AuthStore from './stores/authStore';
 import MatchStore from './stores/matchStore';
+import PostStore from './stores/postStore'
 
 import SplashScene from "./scenes/SplashScene";
 import LoginScene from './scenes/loginScene';
@@ -16,6 +17,8 @@ import MatchScene from './scenes/MatchScene';
 const settings = new SettingsStore()
 const authStore = new AuthStore()
 const matchStore = new MatchStore()
+const postStore = new PostStore()
+
 
 
 export default class AppContainer extends Component {
@@ -27,14 +30,15 @@ export default class AppContainer extends Component {
             store: {
                 settings: settings,
                 auth:authStore,  //Once we get here, every scence and componet have access
-                matches:matchStore
+                matches:matchStore,
+                post:postStore
             },
             theme: theme
         };
     }
 
     toggleDrawer() {
-        this.state.toggled ? this._drawer.close() : this._drawer.open();
+        this.state.toggled ? this.closeDrawer() : this.openDrawer();
     }
 
     openDrawer() {

@@ -1,6 +1,14 @@
+## React native image picker
+
+npm install react-native-image-picker@latest --save
+
+react-native link
+
 ## Default Font side is 15
 22 is kind of nice
 ##Debug URL is
+
+
 
 http://localhost:8081/debugger-ui
 Chrome Developerment Tools
