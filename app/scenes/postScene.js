@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import React, { Component } from 'react'
 import {
     Container,
     Header,
@@ -56,15 +55,15 @@ export default class PostScene extends Component {
     }
 
     post() {
-        const { posts } = this.props.store
+        const {posts} = this.props.stores
         this.setState({
-            uploading:true,
+            uploading: true,
         });
 
         posts.postImage(this.state.data, (snap) => {
-            posts.add(this.state.text,snap.downloadURL)
+            posts.add(this.state.text, snap.downloadURL)
             this.setState({
-                uploading:false
+                uploading: false
             });
             this.props.navigator.pop()
         })
@@ -76,8 +75,7 @@ export default class PostScene extends Component {
             <Container theme={this.props.theme}>
                 <Header>
                     <Button transparent onPress={this.props.navigator.pop}>
-                        <Icon name='chevron-left'/>
-
+                        <Icon name="camera"/>
                     </Button>
                     <Title>
                         Post
@@ -85,7 +83,18 @@ export default class PostScene extends Component {
                 </Header>
                 <View>
                     {this.state.uploading ? <Spinner/> : null}
-                    {this.state.image ? <Thumbnail style={{alignSelf:'cetner'}} size={150} source={this.state.image}/> : null}
+                    {this.state.image ?
+                        <Thumbnail style={{alignSelf: 'center'}} size={150} source={this.state.image}/> : null}
+                    <InputGroup bordType='underline'>
+                        <Input style={{color: 'black'}}
+                               placeholderTextColor='black'
+                               placeholder='Enter Post'
+                               onChangeText={this.updateText.bind(this)}/>
+
+                    </InputGroup>
+                    <Button rounded block onPress={this.post.bind(this)}>
+                        <Text>Share!</Text>
+                    </Button>
                 </View>
 
             </Container>

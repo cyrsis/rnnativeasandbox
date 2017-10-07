@@ -1,24 +1,23 @@
 import { action } from 'mobx'
 import firebase from 'firebase'
 import MobxFirebaseStore from 'mobx-firebase-store'
+
 import RNFetchBlob from 'react-native-fetch-blob'
 
 const Blob = RNFetchBlob.polyfill.Blob
 window.XMLHttpRequest = RNFetchBlob.polyfill.XMLHttpRequest
 window.Blob = Blob
 
-const base = 'posts' //base on the firebase node
+const base = 'posts'
 
-export default class Poststore extends MobxFirebaseStore {
+export default class PostStore extends MobxFirebaseStore {
     constructor() {
         super(firebase.database().ref())
         firebase.auth().onAuthStateChanged((user) => {
             this.user = user;
-            if (user) {
-                this.storage = firebase.storage().ref(user.uid) //I can have storeage from the user.uid object
-            }
+            if (user)
+                this.storage = firebase.storage().ref(user.uid)
         })
-
     }
 
     subs() {
@@ -32,12 +31,12 @@ export default class Poststore extends MobxFirebaseStore {
     @action
     add(text, url) {
         let post = {text: text, created: Date.now(), user: this.user.uid, url: url}
-        let key = this.fb.child(base).push().key //Update the post with a key to get back
+        let key = this.fb.child(base).push().key
 
         let updates = {}
         updates['/' + base + '/' + key] = post
         updates['/' + this.user.uid + '/history/' + key] = true
-        this.fb.update(updates) //Demo of update 2 different place
+        this.fb.update(updates)
     }
 
     @action
@@ -46,17 +45,19 @@ export default class Poststore extends MobxFirebaseStore {
         Blob.build(uri, {type: img.type})
             .then((blob) => {
                 this.storage
-                    .child(img.filename)
-                    .put(blob, {contentType: img.type}
-                    )
+                    .child(img.fileName)
+                    .put(blob, {contentType: img.type})
                     .then((snap) => {
                         cb(snap)
                         blob.close()
-                    })
+                    }, (err) => {
+                        console.log('err', err)
+                    }).catch((err) => {
+                    console.log('catch', err)
+                })
             })
     }
 
-    @action
     getImage(location) {
         return this.storage.child(location).getDownloadURL()
     }

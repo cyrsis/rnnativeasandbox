@@ -44,6 +44,8 @@ class MatchList extends Component {
 
             return (
                 <View style={styles.card}>
+                    <Text>Come out?</Text>
+
                     {pic.uri != undefined && pic.uri != "" ? <Thumbnail source={pic}/> : null }
                     <Text style={styles.text}>
                         {text}
@@ -70,8 +72,6 @@ class MatchList extends Component {
         return (
             <View>
                 { fetching ? <Spinner/> :
-
-
                     <SwipeCards
                         cards={list}
                         renderCard={(card) => this.renderCard(card, matches)}
@@ -87,8 +87,8 @@ class MatchList extends Component {
 const styles = StyleSheet.create({
     card: {
         alignItems: 'center',
+        justifyContent:'center',
         borderRadius: 5,
-        overflow: 'hidden',
         borderColor: 'grey',
         backgroundColor: 'white',
         borderWidth: 1,

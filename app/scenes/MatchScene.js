@@ -6,7 +6,8 @@ import {
     Icon,
     View,
     Button,
-    Title
+    Title,
+    Text
 } from 'native-base'
 import MatchList from '../components/matchList'
 
@@ -37,6 +38,7 @@ export default class MatchScene extends Component {
                     </Button>
                 </Header>
                 <View>
+                    <Text>Rendering</Text>
                     <MatchList stores={this.props.stores}/>
                 </View>
             </Container>

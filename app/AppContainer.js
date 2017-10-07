@@ -13,6 +13,7 @@ import PostStore from './stores/postStore'
 import SplashScene from "./scenes/SplashScene";
 import LoginScene from './scenes/loginScene';
 import MatchScene from './scenes/MatchScene';
+import PostScene from './scenes/postScene';
 
 const settings = new SettingsStore()
 const authStore = new AuthStore()
@@ -60,6 +61,10 @@ export default class AppContainer extends Component {
             case 'Match' :{
                 return <MatchScene {...route.passProps} navigator={navigator}/>
             }
+            case 'Post' :{
+                return <PostScene {...route.passProps} navigator={navigator}/>
+            }
+
             default:
                 return null;
         }
