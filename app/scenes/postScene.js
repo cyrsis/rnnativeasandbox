@@ -16,6 +16,8 @@ import {
 
 import ImagePicker from 'react-native-image-picker'
 
+
+
 const options = {
     title: 'Select Image',
     quality: 1.0,
@@ -57,7 +59,7 @@ export default class PostScene extends Component {
     post() {
         const {posts} = this.props.stores
         this.setState({
-            uploading: true,
+            uploading: true
         });
 
         posts.postImage(this.state.data, (snap) => {
@@ -74,11 +76,12 @@ export default class PostScene extends Component {
         return (
             <Container theme={this.props.theme}>
                 <Header>
-                    <Button transparent onPress={this.props.navigator.pop}>
+                    <Button transparent
+                            onPress={this.props.navigator.pop}>
                         <Icon name="camera"/>
                     </Button>
                     <Title>
-                        Post
+                        Posts
                     </Title>
                 </Header>
                 <View>
